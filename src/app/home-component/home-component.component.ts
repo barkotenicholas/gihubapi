@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-home-component',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponentComponent implements OnInit {
 
-  constructor() { }
+  private githubUserQuery!:string;
+  private user!:User;
+  constructor(private httpService : HttpService) { }
 
   ngOnInit(): void {
+  }
+
+
+  public searchUser(){
+    this.httpService.getProfileInfo(this.githubUserQuery).subscribe((profile:User)=>{
+      this.user = profile;
+      console.log(this.user);
+    });
+
   }
 
 }
