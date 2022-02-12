@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpService } from '../http.service';
 import { User } from '../user';
 
@@ -12,7 +12,7 @@ export class HomeComponentComponent implements OnInit {
 
   private githubUserQuery!:string;
   private user!:User;
-  constructor(private httpService : HttpService ,private activateddRoute:ActivatedRoute) { 
+  constructor(private httpService : HttpService ,private activateddRoute:ActivatedRoute,private router: Router) { 
 
   }
 
@@ -35,12 +35,9 @@ export class HomeComponentComponent implements OnInit {
   }
 
 
-  public searchUser(){
-    this.httpService.getProfileInfo(this.githubUserQuery).subscribe((profile:User)=>{
-      this.user = profile;
-      console.log(this.user);
-    });
 
+  goToRepos():void{
+    this.router.navigate(['repos/',this.user.name]);
   }
 
 }
