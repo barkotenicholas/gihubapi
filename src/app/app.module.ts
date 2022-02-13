@@ -9,13 +9,15 @@ import { SearchComponent } from './search/search.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { ReposComponent } from './repos/repos.component';
 import { HttpHeadersInterceptors } from './interceptor/httpinterceptor';
+import { DatePipe } from './date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     HomeComponentComponent,
-    ReposComponent
+    ReposComponent,
+    DatePipe
   ],
   imports: [
     BrowserModule,
