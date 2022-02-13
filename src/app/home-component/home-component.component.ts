@@ -10,7 +10,7 @@ import { User } from '../user';
 })
 export class HomeComponentComponent implements OnInit {
 
-  private githubUserQuery!:string;
+   githubUserQuery!:string;
   public user!:User;
   constructor(private httpService : HttpService ,private activateddRoute:ActivatedRoute,private router: Router) { 
 
@@ -19,6 +19,7 @@ export class HomeComponentComponent implements OnInit {
   ngOnInit(): void {
     this.activateddRoute.params.subscribe((params:Params)=>{
       console.log(params["git-search"])
+      this.githubUserQuery = params["git-search"]
       if(params["git-search"]){
         this.httpService.getProfileInfo(params["git-search"]).subscribe((profile:User)=>{
           this.user = profile;
@@ -38,7 +39,8 @@ export class HomeComponentComponent implements OnInit {
 
 
   goToRepos():void{
-    this.router.navigate(['repos/',this.user.name]);
+    console.log(this.user.name);
+    this.router.navigate(['repos',this.githubUserQuery]);
   }
 
 }

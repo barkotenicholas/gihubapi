@@ -16,7 +16,7 @@ export class HttpService {
 
 
   getProfileInfo(searchQuery:string):Observable<User>{
-    return this.http.get<User>(`${env.BASE_URL}/users/${searchQuery}`);
+    return this.http.get<User>(`${env.BASE_URL}/users/${searchQuery}?client_id=${env.id}&client_secret=${env.secret}`);
   }
 
   getRepos(searchQuery:string):Observable<Array<Repository>>{

@@ -18,9 +18,8 @@ export class ReposComponent implements OnInit {
 
       this.activateddRoute.params.subscribe((params:Params)=>{
         this.username = params["git-id"];
-        this.httpService.getRepos(this.username).subscribe((data:Array<Repository>)=>{
-          
-          
+        console.log(this.username);
+        this.httpService.getRepos(params["git-id"]).subscribe((data:Array<Repository>)=>{       
           this.repos = data;
           console.log("This is "+ this.repos[1].name);
         });
