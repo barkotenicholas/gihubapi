@@ -1,3 +1,64 @@
+# Github user searcher
+This angular application allows one to search for any github username
+
+---
+# preview
+
+![alt text](./src/assets/onesearch.png)
+---
+![alt text](./src/assets/repo.png)
+
+---
+**Version1.0.0**
+
+---
+![APM](https://img.shields.io/apm/l/vim-mode)
+---
+## Authors
+- Nicholas Barkote <nicholas.kebut@student.moringaschool.com>
+---
+
+## Requirements
+
+- google Chrome
+- git
+
+## Setup Instructions
+
+* clone it to your desktop 
+```bash
+ git clone  https://github.com/barkotenicholas/githubapi.git
+ cd gitubapi
+ npm install
+ ng serve -o
+  ```
+* Open ilocalhost/4200 with a google chrome
+ 
+# Tech Stack
+
+- HTML
+- CSS
+- bootstrap
+- angular
+  
+
+## Contact Information
+
+<a href="mailto:barkotenicholas@gmail.com">barkotenicholas@gmail.com</a>
+
+ ## Live Link
+
+
+[Click here to see the website](https://barkotenicholas.github.io/birthday/)
+
+
+## License & copyright
+
+© Nicholas k Barkote , Moringa school student
+
+Licensed under the [MIT License](LICENSE)
+
+
 # Github
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
