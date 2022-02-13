@@ -10,6 +10,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { ReposComponent } from './repos/repos.component';
 import { HttpHeadersInterceptors } from './interceptor/httpinterceptor';
 import { DatePipe } from './date.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DatePipe } from './date.pipe';
     SearchComponent,
     HomeComponentComponent,
     ReposComponent,
-    DatePipe
+    DatePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

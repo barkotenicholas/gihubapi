@@ -1,4 +1,7 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {
+  Pipe,
+  PipeTransform
+} from '@angular/core';
 
 @Pipe({
   name: 'date'
@@ -6,8 +9,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DatePipe implements PipeTransform {
 
   transform(value: any): number {
-    
+
     var date = new Date(value);
     return date.getFullYear();
+
+  }
 
 }
