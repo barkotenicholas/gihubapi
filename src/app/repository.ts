@@ -1,5 +1,6 @@
-export type repo = Repository[]
-
+export interface Repos<T> {
+    results: Array<T>;
+}
 export interface Repository {
   id: number
   node_id: string
@@ -80,7 +81,7 @@ export interface Repository {
   default_branch: string
 }
 
-export interface Owner {
+interface Owner {
   login: string
   id: number
   node_id: string

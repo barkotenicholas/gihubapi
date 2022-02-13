@@ -1,21 +1,25 @@
 <div class="container">
+  <div class="row d-flex flex-wrap">
 
-    <div class="row">
-        <div class="col-xs-12 col-md-4">
-            <div class="card bg-light">
-                <div class="card-body">
-                    <a href="#" target="_blank" rel="noopener noreferrer"><h5 class="card-title" >Repo Name</h5></a>
-                    <h5 class="card-subtitle text-muted">Language</h5>
-                    <p class="card-text"> Description </p>
-                    <ul class="list-group-horizontal">
-                        <li class="list-group-item">star</li>
-                        <li class="list-group-item">eye</li>
-                        <li class="list-group-item">fork</li>
-
-                    </ul>
-                </div>
-            </div>
+    <div class="col-xs-12 col-md-4 d-flex" *ngFor="let repo of repos">
+      <div class="card bg-light d-flex m-3">
+        <div class="card-body">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <h5 class="card-title">{{repo.name}}</h5>
+          </a>
+          <h5 class="card-subtitle text-muted">Language : {{repo.language}}</h5>
+          <p class="card-text"> {{repo.description}} </p>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><i class="fa fa-star" aria-hidden="true"></i>
+              {{repo.stargazers_count}}</li>
+            <li class="list-group-item"><i class="fa fa-eye" aria-hidden="true"></i>
+              {{repo.watchers_count}} </li>
+            <li class="list-group-item"><i class="fa fa-code-fork" aria-hidden="true"></i>
+              {{repo.forks_count}}</li>
+          </ul>
         </div>
+      </div>
     </div>
 
+  </div>
 </div>

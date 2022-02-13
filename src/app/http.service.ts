@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment as env } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { User } from './user';
-import { repo } from './repository';
+import { Repos, Repository } from './repository';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,8 @@ export class HttpService {
     return this.http.get<User>(`${env.BASE_URL}/users/${searchQuery}`);
   }
 
-  getRepos(searchQuery:string):Observable<repo>{
-    return this.http.get<repo>(`${env.BASE_URL}/users/${searchQuery}/repos`);
+  getRepos(searchQuery:string):Observable<Array<Repository>>{
+    return this.http.get<Array<Repository>>(`${env.BASE_URL}/users/${searchQuery}/repos`);
 
   }
 }

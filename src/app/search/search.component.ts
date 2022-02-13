@@ -16,7 +16,8 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit(form : NgForm){
-    this.router.navigate(["users",form.value.search]);
+    console.log(form.value.search);
+    this.router.navigate(["search",form.value.search]);
   }
 
 }

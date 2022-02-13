@@ -2,24 +2,24 @@
 <div class="container m-5">
 
     <div class="row">
-        <div class="col-md-5">
-            <img src="" alt="Profile Image" class="img-fluid rounded-circle">
+        <div class="col-sm-3">
+            <img src={{user.avatar_url}}  alt="Profile Image" class="img-fluid rounded-circle">
             <p> </p>
         </div>
         <div class="col-md-5">
             <div class="list-group">
                 <ul class="list-group">
-                    <li class="list-group-item" >
-                        email
+                    <li class="list-group-item" *ngIf="user.email" >
+                        email:{{user.email}}
+                    </li>
+                    <li class="list-group-item" *ngIf="user.hireable" >
+                       Hirable: {{ user.hireable}}
+                    </li>
+                    <li class="list-group-item" *ngIf="user.blog" >
+                        Blog: {{user.blog}}
                     </li>
                     <li class="list-group-item" >
-                        hirebale
-                    </li>
-                    <li class="list-group-item" >
-                        blog
-                    </li>
-                    <li class="list-group-item" >
-                        <a href="emailto:barkotenicholas@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+                        <a href="emailto:{{user.email}}" target="_blank" rel="noopener noreferrer">{{user.email}}</a>
                     </li>
                 </ul>
             </div>
@@ -31,21 +31,23 @@
             <div >
                 <p >
                     <span class="m-1 badge bg-secondary">
-                       Followers 
+                       Followers : {{user.followers}} 
                     </span>
                     <span class="m-1 badge bg-primary">
-                         Following
+                         {{user.following}} Following
                     </span>
                     <span class="m-1 badge bg-warning">
-                       Public Gist
+                       Public Gist {{user.public_gists}}
                     </span>
                     <span class="m-1 badge bg-success">
-                        public Repo
+                        public Repo {{user.public_repos}}
                     </span>
                 </p>
             </div>
-            <a  class="btn btn-sm btn-success"  (click)="goToRepos()" >Go to github page</a>
-        
+            <a  class="btn btn-sm btn-light"  (click)="goToRepos()" >Go to github page <i class="fa fa-github lead" aria-hidden="true"></i>
+            </a>
+
+
         </div>
     </div>
 </div>

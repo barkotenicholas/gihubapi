@@ -11,14 +11,15 @@ import { User } from '../user';
 export class HomeComponentComponent implements OnInit {
 
   private githubUserQuery!:string;
-  private user!:User;
+  public user!:User;
   constructor(private httpService : HttpService ,private activateddRoute:ActivatedRoute,private router: Router) { 
 
   }
 
   ngOnInit(): void {
     this.activateddRoute.params.subscribe((params:Params)=>{
-      if(params['git-search']){
+      console.log(params["git-search"])
+      if(params["git-search"]){
         this.httpService.getProfileInfo(params["git-search"]).subscribe((profile:User)=>{
           this.user = profile;
           console.log(this.user);
