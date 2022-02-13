@@ -25,11 +25,7 @@ import { HttpHeadersInterceptors } from './interceptor/httpinterceptor';
     
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass:HttpHeadersInterceptors,
-      multi:true
-    }
+    
   ],
   bootstrap: [AppComponent]
 })
