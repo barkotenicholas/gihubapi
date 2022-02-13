@@ -1,7 +1,7 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, retry } from "rxjs";
-
+import { environment as env } from "src/environments/environment";
 @Injectable()
 export class HttpHeadersInterceptors implements  HttpInterceptor{
 
@@ -9,7 +9,7 @@ export class HttpHeadersInterceptors implements  HttpInterceptor{
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         req = req.clone({
             setHeaders: {
-                Authorization : `Bearer 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`
+                'Authorization' : `Bearer ${env.token}`
               }
         });
 

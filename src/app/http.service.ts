@@ -20,7 +20,7 @@ export class HttpService {
   }
 
   getRepos(searchQuery:string):Observable<Array<Repository>>{
-    return this.http.get<Array<Repository>>(`${env.BASE_URL}/users/${searchQuery}/repos`);
+    return this.http.get<Array<Repository>>(`${env.BASE_URL}/users/${searchQuery}/repos?client_id=${env.id}&client_secret=${env.secret}`);
 
   }
 }

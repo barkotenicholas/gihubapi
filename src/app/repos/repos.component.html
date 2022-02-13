@@ -4,7 +4,7 @@
     <div class="col-xs-12 col-md-4 d-flex" *ngFor="let repo of repos">
       <div class="card bg-light d-flex m-3">
         <div class="card-body">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="{{repo.git_url}}" target="_blank" rel="noopener noreferrer">
             <h5 class="card-title">{{repo.name}}</h5>
           </a>
           <h5 class="card-subtitle text-muted">Language : {{repo.language}}</h5>
